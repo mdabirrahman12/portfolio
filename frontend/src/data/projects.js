@@ -1,86 +1,92 @@
-import project1 from "../assets/projects/project1.png";
-import project2 from "../assets/projects/project2.png";
-import project3 from "../assets/projects/project3.svg";
+import devconfImg from "../assets/projects/DEVCONF.JPG";
+import devStackImg from "../assets/projects/DevStack.JPG";
+import portfolioLandingImg from "../assets/projects/portfolio_landing_page.JPG";
 
 const projects = [
   {
     id: 1,
-    title: "Developer Portfolio & Showcase",
-    image: project1,
-    category: "Frontend Web Application",
+    title: "Developer Tech Conference 2026",
+    subtitle: "Code. Connect. Create - Tech Summit",
+    image: devconfImg,
+    category: "Event & Conference Website",
     technologies: [
-      "React",
-      "Tailwind CSS",
-      "JavaScript (ES6+)",
-      "React Router",
-      "Vite"
+      "HTML5",
+      "CSS3",
+      "Responsive Web Design",
+      "Flexbox & CSS Grid",
+      "Google Fonts (Inter)"
     ],
     description:
-      "A modern, high-performance personal portfolio built for showcasing frontend engineering skills, interactive projects, and a responsive resume viewer. Features smooth section navigation, responsive mobile menu, dynamic routing, and ATS-friendly printable resume.",
-    live: "https://example.com/portfolio-demo",
-    github: "https://github.com/example/portfolio-frontend",
+      "A high-impact, modern tech conference landing page designed for an international developer summit. Features an immersive hero banner with registration CTAs, a featured keynote speakers showcase (highlighting leaders in AI/ML & Cloud), interactive schedule tracks, event venue details, and developer blog highlights.",
+    live: "https://mdabirrahman12.github.io/Assignment_01/",
+    github: "https://github.com/mdabirrahman12/Assignment_01",
     challenges: [
-      "Building a smooth active-section scroll spy with route-aware navigation",
-      "Crafting an ATS-compatible, print-optimized resume stylesheet in React",
-      "Ensuring fluid responsiveness across ultra-wide monitors down to small mobile viewports"
+      "Crafting a responsive multi-column speaker grid that adapts cleanly across mobile, tablet, and widescreen viewports",
+      "Achieving fluid typography and visual hierarchy using modern CSS without external UI framework dependencies",
+      "Designing accessible and touch-friendly navigation with intuitive call-to-action buttons"
     ],
     future: [
-      "Dark / Light theme mode toggle with localStorage persistence",
-      "Interactive contact form integration via EmailJS / Web3Forms",
-      "Markdown-powered tech blog section with syntax highlighting"
+      "Add interactive speaker filtering by topic (AI/ML, DevOps, Frontend, Cloud)",
+      "Integrate an interactive ticket booking modal with real-time seat selection",
+      "Implement a live countdown timer leading up to the conference opening ceremony"
     ],
   },
   {
     id: 2,
-    title: "TechGear - Modern Tech Store",
-    image: project2,
-    category: "E-Commerce Web App",
+    title: "Dev-Stack - Curated Developer Hub",
+    subtitle: "Modern Tools, Frameworks & Resource Catalog",
+    image: devStackImg,
+    category: "Full Stack / Frontend Web App",
     technologies: [
-      "React",
-      "Tailwind CSS",
-      "JavaScript",
-      "Context API",
-      "REST API"
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "DaisyUI",
+      "Vite",
+      "React Toastify",
+      "React Icons"
     ],
     description:
-      "A responsive, full-featured electronics and tech gadgets web application. Includes instant product category filtering, price range slider, real-time shopping cart drawer with quantity adjustments, and simulated checkout flow.",
-    live: "https://example.com/techgear-demo",
-    github: "https://github.com/example/techgear-ecommerce",
+      "A curated developer stack and toolkit directory built with React 19, TypeScript, and Tailwind CSS v4. Dev-Stack empowers software engineers and tech enthusiasts to explore, discover, and bookmark essential developer tools, UI libraries, and frameworks with an intuitive, component-driven user interface.",
+    live: "https://mdabirrahman12.github.io/dev-stack/",
+    github: "https://github.com/mdabirrahman12/dev-stack",
     challenges: [
-      "Global cart state management with React Context without unnecessary re-renders",
-      "Smooth slide-over modal drawer implementation for cart and mobile filters",
-      "Instant multi-criteria client-side search and category filtering"
+      "Configuring Tailwind CSS v4 with DaisyUI components and Vite in a modern React 19 ecosystem",
+      "Managing asynchronous JSON data fetching and suspense boundaries with graceful fallback loading states",
+      "Ensuring strict TypeScript type safety across component props and data models"
     ],
     future: [
-      "Integration with Stripe payment gateway test API",
-      "User authentication and order history dashboard",
-      "Wishlist system with localStorage persistence"
+      "Implement real-time search indexing and multi-criteria category filtering",
+      "Add a user submission portal allowing community members to suggest new dev tools",
+      "Introduce a persistent favorites and bookmarking system powered by LocalStorage"
     ],
   },
   {
     id: 3,
-    title: "TaskFlow - Agile Kanban Board",
-    image: project3,
-    category: "Productivity & SaaS",
+    title: "Portfolio Landing Page",
+    subtitle: "Clean, Responsive Personal Showcase",
+    image: portfolioLandingImg,
+    category: "Personal Showcase & Landing Page",
     technologies: [
-      "React",
-      "Tailwind CSS",
-      "JavaScript (ES6+)",
-      "LocalStorage"
+      "HTML5",
+      "CSS3",
+      "Responsive Layout",
+      "CSS Media Queries",
+      "Modern Web Aesthetics"
     ],
     description:
-      "An intuitive task management and productivity dashboard inspired by Trello and Jira. Supports custom task creation, priority color-coding, multi-stage workflow columns (Backlog, In Progress, Completed), and search indexing.",
-    live: "https://example.com/taskflow-demo",
-    github: "https://github.com/example/taskflow-kanban",
+      "A clean, elegant personal portfolio landing page emphasizing semantic HTML5 structure, responsive layout principles, and refined typography. Designed to highlight creative expertise, completed works, client testimonials, and a direct engagement channel.",
+    live: "https://mdabirrahman12.github.io/Portfolio_landing_page/",
+    github: "https://github.com/mdabirrahman12/Portfolio_landing_page",
     challenges: [
-      "Seamless task state transitions across columns with proper data immutability",
-      "Persistent state synchronization with browser LocalStorage",
-      "Clean UI component design adhering to accessibility standards"
+      "Structuring clean, hand-crafted CSS layouts without bloated CSS libraries",
+      "Ensuring cross-browser compatibility and consistent box-sizing across desktop and mobile devices",
+      "Creating seamless hover states and visual feedback on interactive buttons and navigation links"
     ],
     future: [
-      "Drag and drop reordering using @dnd-kit/core",
-      "Firebase Firestore integration for multi-device real-time sync",
-      "Subtasks checklist and due-date notification system"
+      "Incorporate dynamic dark and light mode theme toggling with CSS variables",
+      "Add micro-interactions and smooth scroll animations using modern CSS animations",
+      "Integrate an AJAX-powered interactive contact form with client-side validation"
     ],
   },
 ];

@@ -4,31 +4,39 @@ import {
   FaJsSquare,
   FaHtml5,
   FaCss3Alt,
-  FaNodeJs,
   FaGitAlt,
-  FaNpm,
-  FaChrome,
+  FaWordpress,
+  FaSearch,
+  FaEnvelope,
+  FaRobot,
+  FaServer,
+  FaPalette,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
-  SiBootstrap,
-  SiMongodb,
-  SiFirebase,
+  SiElementor,
+  SiGooglesearchconsole,
+  SiGoogleanalytics,
+  SiCloudflare,
   SiVite,
-  SiPostman,
-  SiVercel,
 } from "react-icons/si";
-import { HiOutlineCode, HiOutlineServer, HiOutlineTerminal } from "react-icons/hi";
+import {
+  HiOutlineCode,
+  HiOutlineGlobeAlt,
+  HiOutlineChartBar,
+  HiOutlineSparkles,
+} from "react-icons/hi";
 
 const categories = [
   { id: "all", name: "All Skills" },
-  { id: "frontend", name: "Frontend", icon: HiOutlineCode },
-  { id: "backend", name: "Backend & DB", icon: HiOutlineServer },
-  { id: "tools", name: "Tools & Deploy", icon: HiOutlineTerminal },
+  { id: "frontend", name: "Frontend & Web", icon: HiOutlineCode },
+  { id: "cms", name: "WordPress & CMS", icon: HiOutlineGlobeAlt },
+  { id: "seo", name: "SEO & Performance", icon: HiOutlineChartBar },
+  { id: "marketing", name: "Marketing & AI", icon: HiOutlineSparkles },
 ];
 
 const skillsData = [
-  // Frontend
+  // Frontend & Web
   {
     name: "React.js",
     category: "frontend",
@@ -36,7 +44,18 @@ const skillsData = [
     color: "text-cyan-500",
     bg: "bg-cyan-50 border-cyan-100",
     level: "Proficient",
-    description: "Hooks, Router, Context API, Component Lifecycle",
+    percentage: 85,
+    description: "Component-driven design, Hooks, Router, State handling, Vite integration",
+  },
+  {
+    name: "Tailwind CSS",
+    category: "frontend",
+    icon: SiTailwindcss,
+    color: "text-teal-500",
+    bg: "bg-teal-50 border-teal-100",
+    level: "Advanced",
+    percentage: 92,
+    description: "Utility-first workflows, custom responsive grids, modern animations, v4 styling",
   },
   {
     name: "JavaScript (ES6+)",
@@ -45,16 +64,8 @@ const skillsData = [
     color: "text-yellow-500",
     bg: "bg-yellow-50 border-yellow-100",
     level: "Proficient",
-    description: "Async/Await, DOM manipulation, Array methods, ES6 Modules",
-  },
-  {
-    name: "Tailwind CSS",
-    category: "frontend",
-    icon: SiTailwindcss,
-    color: "text-teal-500",
-    bg: "bg-teal-50 border-teal-100",
-    level: "Proficient",
-    description: "Utility classes, Flex/Grid layouts, Dark mode, Custom themes",
+    percentage: 82,
+    description: "Async/await, DOM events, modern array methods, ES modules, dynamic UI logic",
   },
   {
     name: "HTML5 & Semantic Markup",
@@ -62,211 +73,244 @@ const skillsData = [
     icon: FaHtml5,
     color: "text-orange-500",
     bg: "bg-orange-50 border-orange-100",
-    level: "Advanced",
-    description: "Semantic elements, SEO optimization, Forms & Accessibility",
+    level: "Expert",
+    percentage: 95,
+    description: "Semantic tag structure, web accessibility (a11y), clean DOM trees for SEO",
   },
   {
-    name: "CSS3 & Modern Layouts",
+    name: "CSS3 & Responsive Layouts",
     category: "frontend",
     icon: FaCss3Alt,
     color: "text-blue-500",
     bg: "bg-blue-50 border-blue-100",
     level: "Advanced",
-    description: "Flexbox, CSS Grid, Transitions, Keyframe Animations",
+    percentage: 90,
+    description: "Flexbox, CSS Grid, media queries, mobile-first design, fluid transitions",
   },
-  {
-    name: "Bootstrap 5",
-    category: "frontend",
-    icon: SiBootstrap,
-    color: "text-purple-500",
-    bg: "bg-purple-50 border-purple-100",
-    level: "Comfortable",
-    description: "Responsive grid, Utility classes, Modal dialogs",
-  },
-
-  // Backend & DB
-  {
-    name: "Node.js (Basics)",
-    category: "backend",
-    icon: FaNodeJs,
-    color: "text-emerald-500",
-    bg: "bg-emerald-50 border-emerald-100",
-    level: "Familiar",
-    description: "Server architecture, Event loop, NPM packages",
-  },
-  {
-    name: "Express.js (Basics)",
-    category: "backend",
-    icon: HiOutlineServer,
-    color: "text-gray-700",
-    bg: "bg-gray-50 border-gray-200",
-    level: "Familiar",
-    description: "Routing, Middleware, RESTful API endpoints",
-  },
-  {
-    name: "MongoDB (CRUD)",
-    category: "backend",
-    icon: SiMongodb,
-    color: "text-emerald-600",
-    bg: "bg-emerald-50 border-emerald-100",
-    level: "Familiar",
-    description: "Collections, Documents, Query filters, Aggregations",
-  },
-  {
-    name: "Firebase",
-    category: "backend",
-    icon: SiFirebase,
-    color: "text-amber-500",
-    bg: "bg-amber-50 border-amber-100",
-    level: "Comfortable",
-    description: "Authentication, Firestore database, Hosting",
-  },
-
-  // Tools & Deployment
   {
     name: "Git & GitHub",
-    category: "tools",
+    category: "frontend",
     icon: FaGitAlt,
-    color: "text-orange-600",
-    bg: "bg-orange-50 border-orange-100",
+    color: "text-rose-500",
+    bg: "bg-rose-50 border-rose-100",
     level: "Proficient",
-    description: "Branching, Pull Requests, Merge conflicts, Versioning",
+    percentage: 84,
+    description: "Branching, clean commit hygiene, GitHub Pages hosting, collaborative workflows",
+  },
+
+  // WordPress & CMS
+  {
+    name: "WordPress CMS",
+    category: "cms",
+    icon: FaWordpress,
+    color: "text-blue-600",
+    bg: "bg-blue-50 border-blue-100",
+    level: "Advanced",
+    percentage: 90,
+    description: "Website management at IID, theme setup, plugin configuration, content publishing",
   },
   {
-    name: "Vite",
-    category: "tools",
-    icon: SiVite,
-    color: "text-purple-600",
-    bg: "bg-purple-50 border-purple-100",
-    level: "Proficient",
-    description: "Fast HMR, Bundling, Config plugins, Build optimization",
+    name: "Elementor & Elementor Pro",
+    category: "cms",
+    icon: SiElementor,
+    color: "text-rose-600",
+    bg: "bg-rose-50 border-rose-100",
+    level: "Advanced",
+    percentage: 92,
+    description: "Custom page building, responsive templates, dynamic content blocks, ToR updates",
   },
   {
-    name: "Postman",
-    category: "tools",
-    icon: SiPostman,
-    color: "text-orange-500",
-    bg: "bg-orange-50 border-orange-100",
-    level: "Comfortable",
-    description: "API testing, Request payloads, Header inspection",
+    name: "Content Management",
+    category: "cms",
+    icon: HiOutlineGlobeAlt,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50 border-emerald-100",
+    level: "Advanced",
+    percentage: 88,
+    description: "News posts, event pages, notices, blog formatting, media library organization",
   },
   {
-    name: "Vercel & Netlify",
-    category: "tools",
-    icon: SiVercel,
-    color: "text-gray-900",
-    bg: "bg-gray-50 border-gray-200",
-    level: "Proficient",
-    description: "CI/CD auto-deployments, Custom domains, Environment variables",
+    name: "Hosting, cPanel & Cloudflare",
+    category: "cms",
+    icon: SiCloudflare,
+    color: "text-amber-600",
+    bg: "bg-amber-50 border-amber-100",
+    level: "Experienced",
+    percentage: 80,
+    description: "cPanel management, SSL configuration, domain DNS routing, Cloudflare caching",
+  },
+
+  // SEO & Performance
+  {
+    name: "On-Page SEO",
+    category: "seo",
+    icon: FaSearch,
+    color: "text-indigo-600",
+    bg: "bg-indigo-50 border-indigo-100",
+    level: "Advanced",
+    percentage: 90,
+    description: "Focus keywords, meta titles, descriptions, slugs, heading hierarchy, internal linking",
   },
   {
-    name: "Chrome DevTools",
-    category: "tools",
-    icon: FaChrome,
-    color: "text-blue-500",
+    name: "Technical SEO",
+    category: "seo",
+    icon: SiGooglesearchconsole,
+    color: "text-blue-700",
     bg: "bg-blue-50 border-blue-100",
     level: "Proficient",
-    description: "DOM Inspection, Network tab, Console debugging, Performance",
+    percentage: 86,
+    description: "Sitemap generation, robots.txt auditing, search indexing analysis, schema basics",
   },
   {
-    name: "npm & Ecosystem",
-    category: "tools",
-    icon: FaNpm,
-    color: "text-red-500",
-    bg: "bg-red-50 border-red-100",
+    name: "Website Optimization",
+    category: "seo",
+    icon: SiGoogleanalytics,
+    color: "text-emerald-600",
+    bg: "bg-emerald-50 border-emerald-100",
     level: "Proficient",
-    description: "Package management, Scripts, Dependency resolution",
+    percentage: 85,
+    description: "Page speed optimization, image alt text, asset compression, indexing visibility",
+  },
+
+  // Marketing & AI
+  {
+    name: "Advanced Email Marketing",
+    category: "marketing",
+    icon: FaEnvelope,
+    color: "text-blue-500",
+    bg: "bg-blue-50 border-blue-100",
+    level: "Certified",
+    percentage: 90,
+    description: "Simplilearn Certified • Campaign workflows, deliverability, CRM and audience segmentation",
+  },
+  {
+    name: "Digital Marketing 101",
+    category: "marketing",
+    icon: HiOutlineSparkles,
+    color: "text-purple-600",
+    bg: "bg-purple-50 border-purple-100",
+    level: "Certified",
+    percentage: 88,
+    description: "Simplilearn Certified (Code: 3771440) • Organic growth, social campaigns, funnel strategy",
+  },
+  {
+    name: "AI & Prompt Engineering",
+    category: "marketing",
+    icon: FaRobot,
+    color: "text-teal-600",
+    bg: "bg-teal-50 border-teal-100",
+    level: "Proficient",
+    percentage: 88,
+    description: "ChatGPT, AI-assisted content workflows, prompt crafting, SEO content optimization",
+  },
+  {
+    name: "Canva & Visual Design",
+    category: "marketing",
+    icon: FaPalette,
+    color: "text-pink-500",
+    bg: "bg-pink-50 border-pink-100",
+    level: "Proficient",
+    percentage: 85,
+    description: "Social media graphics, banner design, website visual assets, brand presentations",
   },
 ];
 
 const Skills = () => {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredSkills =
-    activeTab === "all"
+    activeCategory === "all"
       ? skillsData
-      : skillsData.filter((skill) => skill.category === activeTab);
+      : skillsData.filter((skill) => skill.category === activeCategory);
 
   return (
     <section id="skills" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+      <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-semibold uppercase tracking-wider">
-          <HiOutlineCode className="text-blue-600 text-sm" />
-          <span>Technical Arsenal</span>
+          <HiOutlineSparkles className="text-blue-600 text-sm" />
+          <span>Technical Toolkit</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills</span>
+          Skills &amp;{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            Competencies
+          </span>
         </h2>
 
         <p className="text-base sm:text-lg text-gray-600">
-          The technologies, libraries, and developer tools I leverage to build fast, responsive, and delightful web applications.
+          A blend of modern web engineering, CMS mastery, technical SEO, and certified digital marketing capabilities.
         </p>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveTab(cat.id)}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-              activeTab === cat.id
-                ? "bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-105"
-                : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600 hover:bg-gray-50"
-            }`}
-          >
-            {cat.name}
-          </button>
-        ))}
+      {/* Category Tabs */}
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+        {categories.map((cat) => {
+          const Icon = cat.icon;
+          const isActive = activeCategory === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                isActive
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-102"
+                  : "bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-100 border border-gray-200"
+              }`}
+            >
+              {Icon && <Icon className="text-base" />}
+              <span>{cat.name}</span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* Skills Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {/* Skills Grid with Graphical Visuals */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredSkills.map((skill) => {
           const Icon = skill.icon;
           return (
             <div
               key={skill.name}
-              className="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-xs hover:shadow-lg hover:border-blue-300 transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-gray-200/90 p-6 shadow-xs hover:shadow-lg hover:border-blue-300 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center border text-2xl ${skill.bg} ${skill.color} group-hover:scale-110 transition-transform`}
-                  >
-                    <Icon />
+                {/* Header: Icon + Name + Badge */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center border text-2xl shrink-0 ${skill.bg} ${skill.color}`}
+                    >
+                      <Icon />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-base leading-snug">
+                        {skill.name}
+                      </h3>
+                      <span className="text-[11px] font-semibold text-blue-600 uppercase tracking-wider">
+                        {skill.level}
+                      </span>
+                    </div>
                   </div>
 
-                  <span
-                    className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${
-                      skill.level === "Advanced"
-                        ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                        : skill.level === "Proficient"
-                        ? "bg-blue-50 text-blue-700 border-blue-200"
-                        : "bg-purple-50 text-purple-700 border-purple-200"
-                    }`}
-                  >
-                    {skill.level}
+                  <span className="text-xs font-mono font-bold text-gray-500 bg-gray-50 px-2 py-1 rounded border border-gray-100">
+                    {skill.percentage}%
                   </span>
                 </div>
 
-                <h3 className="font-bold text-gray-900 text-base mb-1 group-hover:text-blue-600 transition-colors">
-                  {skill.name}
-                </h3>
+                {/* Graphical Progress Bar */}
+                <div className="w-full bg-gray-100 rounded-full h-2 mb-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 h-2 rounded-full transition-all duration-700"
+                    style={{ width: `${skill.percentage}%` }}
+                  ></div>
+                </div>
 
-                <p className="text-xs text-gray-500 leading-relaxed">
+                {/* Description */}
+                <p className="text-xs text-gray-600 leading-relaxed">
                   {skill.description}
                 </p>
-              </div>
-
-              {/* Progress Indicator */}
-              <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                <span className="text-[11px] text-gray-400 font-medium capitalize">
-                  {skill.category}
-                </span>
               </div>
             </div>
           );

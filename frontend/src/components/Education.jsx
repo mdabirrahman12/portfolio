@@ -1,95 +1,113 @@
+import { useState } from "react";
 import {
   HiOutlineAcademicCap,
   HiOutlineBookOpen,
   HiOutlineCalendar,
   HiOutlineLocationMarker,
   HiOutlineBadgeCheck,
+  HiX,
+  HiExternalLink,
 } from "react-icons/hi";
 import { FaGraduationCap, FaCertificate } from "react-icons/fa";
+import certEmailMarketing from "../assets/cert-email-marketing.png";
+import certDigitalMarketing from "../assets/cert-digital-marketing.jpg";
+import certMarketingGoals from "../assets/cert-marketing-goals.jpg";
 
 const educationHistory = [
   {
-    degree: "B.Sc. in Computer Science & Engineering (CSE)",
-    institution: "Your University / College Name",
+    degree: "Bachelor of Business Administration (BBA)",
+    institution: "Notre Dame University Bangladesh",
     location: "Dhaka, Bangladesh",
-    period: "2022 – 2026 (Expected)",
-    grade: "CGPA: 3.50+ / 4.00",
+    period: "July 2023 – Present",
+    grade: "In Progress (Undergraduate)",
     description:
-      "Gained comprehensive theoretical and practical knowledge in computational thinking, software engineering, and web technologies.",
+      "Gaining in-depth knowledge in strategic marketing, corporate communication, digital management, and analytical business modeling, bridging organizational strategy with digital web execution.",
     coursework: [
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming (Java/C++)",
-      "Database Management Systems (DBMS)",
-      "Web Technologies & Engineering",
-      "Operating Systems & Computer Networks",
-      "Software Design Patterns",
+      "Marketing Strategy & Management",
+      "Business Communication",
+      "Management Information Systems (MIS)",
+      "Organizational Behavior",
+      "Strategic Business Decisions",
     ],
   },
   {
-    degree: "Higher Secondary Certificate (HSC) – Science",
-    institution: "Your College Name",
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Nabakumar Institution and Dr. Shahidullah College",
     location: "Dhaka, Bangladesh",
-    period: "2019 – 2021",
-    grade: "GPA: 5.00 / 5.00 (A+)",
+    period: "Passing Year: 2022",
+    grade: "Completed",
     description:
-      "Completed higher secondary education with a major in Science, developing strong analytical thinking and mathematical problem-solving skills.",
-    coursework: ["Physics", "Chemistry", "Higher Mathematics", "Information & Communication Tech (ICT)"],
+      "Completed higher secondary education developing strong discipline, analytical problem solving, and academic consistency.",
+    coursework: ["Information & Communication Technology", "Business Studies", "General Science & Analytics"],
   },
   {
-    degree: "Secondary School Certificate (SSC) – Science",
-    institution: "Your High School Name",
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Pogose Laboratory School and College",
     location: "Dhaka, Bangladesh",
-    period: "2017 – 2019",
-    grade: "GPA: 5.00 / 5.00 (A+)",
+    period: "Passing Year: 2020",
+    grade: "Completed",
     description:
-      "Graduated secondary school with distinction in Science, establishing foundational curiosity for science and computing.",
-    coursework: ["General Science", "Advanced Mathematics", "Computer Studies"],
+      "Graduated secondary school establishing a solid educational foundation and early enthusiasm for digital technologies.",
+    coursework: ["Mathematics", "General Science", "Computer Studies", "Language Fundamentals"],
   },
 ];
 
 const certifications = [
   {
-    title: "Complete Web Development Bootcamp (MERN)",
-    issuer: "Online Learning Academy",
-    year: "2024",
-    desc: "Built 10+ real-world applications covering React, Tailwind CSS, Node.js, Express, and MongoDB.",
+    title: "Advanced Email Marketing",
+    issuer: "SkillUP by Simplilearn",
+    year: "September 2022",
+    date: "30th Sep 2022",
+    image: certEmailMarketing,
+    desc: "Demonstrated initiative and commitment to deepening skills in advanced email marketing campaigns, segmentation, and CRM workflows.",
   },
   {
-    title: "Responsive Web Design Certification",
-    issuer: "freeCodeCamp",
-    year: "2023",
-    desc: "Verified competency in semantic HTML5, modern CSS Grid/Flexbox, and accessible web standards.",
+    title: "Digital Marketing 101",
+    issuer: "SkillUP by Simplilearn",
+    year: "September 2022",
+    date: "14th Sep 2022",
+    code: "3771440",
+    image: certDigitalMarketing,
+    desc: "Mastery in core digital marketing channels, content promotion, search visibility, paid campaigns, and web audience growth.",
   },
   {
-    title: "JavaScript Algorithms & Data Structures",
-    issuer: "freeCodeCamp",
-    year: "2024",
-    desc: "Mastery of ES6+, functional programming, OOP in JS, and algorithmic problem-solving.",
+    title: "Set Your Marketing Goals",
+    issuer: "Nazm C (Instructor: Nazmul)",
+    year: "January 2024",
+    date: "January 8, 2024",
+    duration: "5 hrs 0 min",
+    image: certMarketingGoals,
+    desc: "Completed verified course and project focusing on marketing goal formulation, conversion tracking, and campaign optimization.",
   },
 ];
 
 const Education = () => {
+  const [selectedCert, setSelectedCert] = useState(null);
+
   return (
     <section id="education" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-semibold uppercase tracking-wider">
           <HiOutlineAcademicCap className="text-blue-600 text-sm" />
-          <span>Academic Background</span>
+          <span>Academic &amp; Certifications</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Education</span>
+          Education &amp;{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            Credentials
+          </span>
         </h2>
 
         <p className="text-base sm:text-lg text-gray-600">
-          My educational journey and professional credentials that built my foundational computer science and engineering mindset.
+          Formal academic background alongside industry-standard certifications in marketing, digital strategies, and web technologies.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        {/* Left Column: Formal Degrees Timeline (8 cols) */}
-        <div className="lg:col-span-8 space-y-6">
+        {/* Left Column: Formal Degrees Timeline (7 cols) */}
+        <div className="lg:col-span-7 space-y-6">
           <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
             <FaGraduationCap className="text-blue-600" />
             <span>Academic Qualifications</span>
@@ -137,7 +155,7 @@ const Education = () => {
                 <div>
                   <h5 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 flex items-center gap-1">
                     <HiOutlineBookOpen className="text-blue-600 text-sm" />
-                    Key Courses Studied
+                    Key Areas of Study
                   </h5>
                   <div className="flex flex-wrap gap-1.5">
                     {edu.coursework.map((course) => (
@@ -155,53 +173,115 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Right Column: Certifications & Continuous Learning (4 cols) */}
-        <div className="lg:col-span-4 space-y-6">
+        {/* Right Column: Verified Certifications (5 cols) */}
+        <div className="lg:col-span-5 space-y-6">
           <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
             <FaCertificate className="text-amber-500" />
-            <span>Certifications &amp; Courses</span>
+            <span>Verified Certifications</span>
           </h3>
 
           <div className="space-y-4">
             {certifications.map((cert) => (
               <div
                 key={cert.title}
-                className="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-xs hover:border-amber-200 hover:shadow-sm transition-all"
+                onClick={() => setSelectedCert(cert)}
+                className="bg-white rounded-2xl border border-gray-200/80 p-5 shadow-xs hover:border-amber-300 hover:shadow-md transition-all cursor-pointer group"
               >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
-                    <HiOutlineBadgeCheck className="text-lg" />
+                <div className="flex gap-4 items-start">
+                  {/* Thumbnail */}
+                  <div className="w-20 h-14 rounded-lg overflow-hidden bg-gray-100 border border-gray-200 shrink-0 group-hover:scale-105 transition-transform">
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <span className="text-xs font-bold text-amber-700 bg-amber-50/80 border border-amber-200 px-2 py-0.5 rounded">
-                    {cert.year}
-                  </span>
-                </div>
 
-                <h4 className="font-bold text-gray-900 text-sm mt-3">
-                  {cert.title}
-                </h4>
-                <p className="text-xs font-semibold text-blue-600 mt-0.5">
-                  {cert.issuer}
-                </p>
-                <p className="text-xs text-gray-500 mt-2 leading-relaxed">
-                  {cert.desc}
-                </p>
+                  <div className="flex-grow">
+                    <div className="flex items-start justify-between gap-1">
+                      <h4 className="font-bold text-gray-900 text-sm group-hover:text-blue-600 transition-colors">
+                        {cert.title}
+                      </h4>
+                      <span className="text-[11px] font-bold text-amber-700 bg-amber-50/80 border border-amber-200 px-2 py-0.5 rounded shrink-0">
+                        {cert.year}
+                      </span>
+                    </div>
+
+                    <p className="text-xs font-semibold text-blue-600 mt-0.5">
+                      {cert.issuer}
+                    </p>
+
+                    {cert.code && (
+                      <p className="text-[11px] text-gray-400 font-mono mt-0.5">
+                        Code: {cert.code}
+                      </p>
+                    )}
+
+                    <p className="text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed">
+                      {cert.desc}
+                    </p>
+
+                    <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 mt-2 group-hover:underline">
+                      <span>Click to view certificate</span>
+                      <HiExternalLink className="text-xs" />
+                    </span>
+                  </div>
+                </div>
               </div>
             ))}
 
             {/* Quick Note Card */}
             <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-md">
-              <h4 className="font-bold text-base mb-1">Continuous Learner</h4>
+              <h4 className="font-bold text-base mb-1">Continuous Skill Growth</h4>
               <p className="text-xs text-blue-100 leading-relaxed mb-3">
-                Always sharpening my problem-solving abilities and keeping updated with modern web standards and React 19 innovations.
+                Committed to continuously staying on top of modern frontend paradigms, React updates, and advanced SEO strategies.
               </p>
               <span className="inline-block bg-white/20 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1 rounded-full">
-                Active Code Contributor
+                Abir Digital • Certified
               </span>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
+          onClick={() => setSelectedCert(null)}
+        >
+          <div
+            className="relative bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-3 mb-4 border-b border-gray-100">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">
+                  {selectedCert.title}
+                </h3>
+                <p className="text-xs text-blue-600 font-medium">
+                  {selectedCert.issuer} • {selectedCert.date}
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedCert(null)}
+                aria-label="Close modal"
+                className="p-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition"
+              >
+                <HiX className="text-xl" />
+              </button>
+            </div>
+
+            <div className="rounded-xl overflow-hidden border border-gray-200 bg-gray-50">
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.title}
+                className="w-full h-auto max-h-[70vh] object-contain mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

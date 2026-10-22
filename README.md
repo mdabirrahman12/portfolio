@@ -3,7 +3,7 @@
 A modern, responsive personal developer portfolio web application built with **React 19**, **Vite**, and **Tailwind CSS v4**.
 
 ## ✨ Features
-- **Hero Section**: Introduces a Fresher Web Developer with status badge, stack pills, and interactive developer profile code card.
+- **Hero Section**: Introduces Abir Rahman, Frontend & Web Developer and SEO Executive, with status badge, stack pills, and interactive developer profile code card.
 - **Interactive Resume (`/resume`)**: Full, ATS-friendly printable resume with Print/Save as PDF functionality.
 - **Featured Projects**: Showcase cards with preview screenshots, tech stack pills, direct details view, and live demo / GitHub links.
 - **Dynamic Project Details (`/projects/:id`)**: Comprehensive deep dive pages for individual projects with challenge breakdowns and future roadmaps.

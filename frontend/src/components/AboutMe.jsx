@@ -6,27 +6,28 @@ import {
   HiOutlineMail,
   HiOutlineBriefcase,
   HiOutlineCheckCircle,
+  HiOutlineHeart,
 } from "react-icons/hi";
-import { FaLaptopCode, FaRocket } from "react-icons/fa";
-import heroImg from "../assets/hero.png";
+import { FaLaptopCode, FaRocket, FaFutbol, FaPalette, FaPlane } from "react-icons/fa";
+import avatarImg from "../assets/avatar.png";
 
 const AboutMe = () => {
   const highlights = [
     {
-      title: "Clean & Maintainable Code",
-      desc: "Writing component-driven, reusable code adhering to modern best practices.",
+      title: "Modern Web & Frontend",
+      desc: "Creating component-driven, responsive applications with React 19, Tailwind CSS, and modern JavaScript.",
     },
     {
-      title: "Fast Learner & Adaptable",
-      desc: "Quick to pick up new libraries, frameworks, and engineering workflows.",
+      title: "WordPress & CMS Expertise",
+      desc: "Experienced with Elementor Pro, theme customization, content publishing, and site maintenance at IID.",
     },
     {
-      title: "Responsive & Pixel-Perfect",
-      desc: "Obsessed with creating fluid layouts that work flawlessly on all devices.",
+      title: "Technical & On-Page SEO",
+      desc: "Optimizing meta tags, robots.txt, sitemaps, page speed, image alt tags, and Google search indexing.",
     },
     {
-      title: "Problem Solver",
-      desc: "Passionate about debugging, analytical thinking, and optimizing UX.",
+      title: "Business & Analytical Mindset",
+      desc: "Currently pursuing BBA at Notre Dame University Bangladesh, combining business vision with technical implementation.",
     },
   ];
 
@@ -44,7 +45,7 @@ const AboutMe = () => {
         </h2>
 
         <p className="text-base sm:text-lg text-gray-600">
-          A glimpse into my journey, core values, and dedication as a passionate fresher web developer.
+          A deeper look into my developer journey, technical expertise, work ethos, and personal interests.
         </p>
       </div>
 
@@ -56,19 +57,19 @@ const AboutMe = () => {
             <div className="w-24 h-24 bg-blue-500/10 rounded-full blur-2xl absolute -top-4 -right-4 -z-10"></div>
 
             <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
+              <div className="w-16 h-16 rounded-2xl overflow-hidden border border-blue-100 shadow-md shrink-0">
                 <img
-                  src={heroImg}
-                  alt="Developer graphic"
-                  className="w-10 h-10 object-contain brightness-200"
+                  src={avatarImg}
+                  alt="Abir Rahman"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Your Name</h3>
-                <p className="text-sm font-medium text-blue-600">Fresher Web Developer</p>
+                <h3 className="text-xl font-bold text-gray-900">Abir Rahman</h3>
+                <p className="text-sm font-semibold text-blue-600">Frontend &amp; Web Developer</p>
                 <div className="flex items-center gap-1.5 text-xs text-gray-500 mt-1">
                   <HiOutlineLocationMarker className="text-gray-400" />
-                  <span>Dhaka, Bangladesh</span>
+                  <span>8, North Brook Hall Road, Dhaka-1100</span>
                 </div>
               </div>
             </div>
@@ -77,23 +78,28 @@ const AboutMe = () => {
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-center justify-between py-1.5 border-b border-gray-50">
                 <span className="flex items-center gap-2 text-gray-500">
-                  <HiOutlineBriefcase className="text-blue-600" /> Availability:
+                  <HiOutlineBriefcase className="text-blue-600" /> Experience:
                 </span>
-                <span className="font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs">
-                  Immediate Joining
+                <span className="font-semibold text-gray-800 text-xs">
+                  IID (Executive Communication)
                 </span>
               </div>
               <div className="flex items-center justify-between py-1.5 border-b border-gray-50">
                 <span className="flex items-center gap-2 text-gray-500">
-                  <FaLaptopCode className="text-blue-600" /> Primary Focus:
+                  <FaLaptopCode className="text-blue-600" /> Primary Stack:
                 </span>
-                <span className="font-semibold text-gray-800">React &amp; Modern Frontend</span>
+                <span className="font-semibold text-gray-800">React, Tailwind, WordPress</span>
               </div>
               <div className="flex items-center justify-between py-1.5 border-b border-gray-50">
                 <span className="flex items-center gap-2 text-gray-500">
-                  <HiOutlineMail className="text-blue-600" /> Communication:
+                  <HiOutlineMail className="text-blue-600" /> Direct Email:
                 </span>
-                <span className="font-semibold text-gray-800">English &amp; Bengali</span>
+                <a
+                  href="mailto:abir019750@gmail.com"
+                  className="font-semibold text-blue-600 hover:underline text-xs"
+                >
+                  abir019750@gmail.com
+                </a>
               </div>
             </div>
 
@@ -101,15 +107,41 @@ const AboutMe = () => {
             <div className="grid grid-cols-3 gap-3 pt-6 mt-6 border-t border-gray-100 text-center">
               <div className="p-2.5 bg-gray-50 rounded-xl">
                 <span className="block text-2xl font-black text-blue-600">3+</span>
-                <span className="text-[11px] text-gray-500 font-medium">Demo Projects</span>
+                <span className="text-[11px] text-gray-500 font-medium">Live Projects</span>
               </div>
               <div className="p-2.5 bg-gray-50 rounded-xl">
-                <span className="block text-2xl font-black text-indigo-600">500+</span>
-                <span className="text-[11px] text-gray-500 font-medium">Coding Hours</span>
+                <span className="block text-2xl font-black text-indigo-600">1+ Yr</span>
+                <span className="text-[11px] text-gray-500 font-medium">IID Experience</span>
               </div>
               <div className="p-2.5 bg-gray-50 rounded-xl">
-                <span className="block text-2xl font-black text-emerald-600">100%</span>
-                <span className="text-[11px] text-gray-500 font-medium">Commitment</span>
+                <span className="block text-2xl font-black text-emerald-600">3</span>
+                <span className="text-[11px] text-gray-500 font-medium">Certifications</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Hobbies & Outside Interests Card */}
+          <div className="bg-white rounded-2xl border border-gray-200/90 p-6 shadow-sm">
+            <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+              <HiOutlineHeart className="text-rose-500 text-base" />
+              Outside of Programming
+            </h4>
+            <div className="grid grid-cols-2 gap-3 text-xs text-gray-700">
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-50">
+                <FaFutbol className="text-emerald-600 text-base shrink-0" />
+                <span>Sports &amp; Football</span>
+              </div>
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-50">
+                <FaPalette className="text-indigo-600 text-base shrink-0" />
+                <span>Canva &amp; Visual Design</span>
+              </div>
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-50">
+                <FaPlane className="text-sky-600 text-base shrink-0" />
+                <span>Exploring &amp; Travel</span>
+              </div>
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-gray-50">
+                <HiOutlineSparkles className="text-amber-500 text-base shrink-0" />
+                <span>Tech Trends &amp; AI</span>
               </div>
             </div>
           </div>
@@ -119,13 +151,19 @@ const AboutMe = () => {
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-4 text-gray-600 leading-relaxed text-base sm:text-lg">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight leading-snug">
-              Turning complex design ideas into seamless, interactive web experiences.
+              Bridging business acumen with creative frontend engineering &amp; digital performance.
             </h3>
+            
             <p>
-              I am an aspiring and self-driven <strong>Fresher Web Developer</strong> with a solid academic foundation in Computer Science and an intense passion for modern frontend technologies. My journey began with experimenting with basic HTML &amp; CSS, which quickly evolved into building dynamic, full-fledged Single Page Applications with <strong>React.js</strong> and <strong>Tailwind CSS</strong>.
+              My journey into web development began with a strong curiosity about how the web works and how businesses can reach their audiences effectively. Pursuing my <strong>Bachelor of Business Administration (BBA)</strong> at Notre Dame University Bangladesh gave me deep insights into marketing, communication, and organizational goals, which I channeled directly into learning and mastering modern web development.
             </p>
+
             <p>
-              As a fresher, I bring raw enthusiasm, fresh perspective, and a relentless drive to master modern tools. I place high value on writing clean, accessible, and maintainable code. I am eager to contribute to collaborative engineering teams where I can learn from senior developers and deliver immediate value.
+              Over the past year at <strong>IID (Institute for Informed Development)</strong> as an Executive Communication team member, I actively managed WordPress websites with Elementor Pro, spearheaded On-page and Technical SEO (meta tags, robots.txt, sitemaps, indexing issue resolution), and authored engaging digital content. Concurrently, I expanded my frontend development capabilities with <strong>React 19</strong>, <strong>JavaScript (ES6+)</strong>, <strong>Tailwind CSS</strong>, and modern component-driven architectures.
+            </p>
+
+            <p>
+              I genuinely enjoy building clean, user-friendly digital products where every detail—from responsiveness and performance to SEO visibility and typography—is thoughtfully refined.
             </p>
           </div>
 

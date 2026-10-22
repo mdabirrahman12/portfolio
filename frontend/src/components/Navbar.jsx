@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt3, HiX, HiDocumentText } from "react-icons/hi";
+import logoImg from "../assets/abirdigital-logo.png";
 
 const navLinks = [
   { name: "Home", id: "home" },
@@ -34,7 +35,7 @@ const Navbar = () => {
       sections.forEach((section) => {
         if (!section) return;
 
-        const top = section.offsetTop - 100;
+        const top = section.offsetTop - 120;
         const height = section.offsetHeight;
 
         if (window.scrollY >= top && window.scrollY < top + height) {
@@ -53,26 +54,26 @@ const Navbar = () => {
     <header
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 print:hidden ${
         scrolled || !isHomePage
-          ? "bg-white/90 backdrop-blur-md shadow-md border-b border-gray-100"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100"
+          : "bg-white/70 backdrop-blur-sm"
       }`}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6">
-        {/* Logo */}
+        {/* Logo - abir digital */}
         <Link
           to="/"
-          className="text-2xl font-extrabold tracking-tight text-gray-900 group flex items-center gap-2"
+          className="flex items-center gap-2.5 group"
+          aria-label="Abir Digital Home"
         >
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-mono text-lg shadow-md shadow-blue-500/25 group-hover:scale-105 transition-transform">
-            D
-          </span>
-          <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-600 bg-clip-text text-transparent">
-            DevPortfolio<span className="text-blue-600">.</span>
-          </span>
+          <img
+            src={logoImg}
+            alt="abir digital logo"
+            className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => {
             const href = isHomePage ? `#${link.id}` : `/#${link.id}`;
             const isLinkActive = isHomePage && active === link.id;
@@ -84,7 +85,7 @@ const Navbar = () => {
                   className={`relative py-1 font-medium text-sm transition-colors duration-200 ${
                     isLinkActive
                       ? "text-blue-600 font-semibold"
-                      : "text-gray-600 hover:text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
                   }`}
                 >
                   {link.name}
@@ -100,7 +101,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Right CTA (Resume Button) */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/resume"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
@@ -114,7 +115,7 @@ const Navbar = () => {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
-          className="md:hidden text-2xl text-gray-800 p-2 rounded-lg hover:bg-gray-100 transition focus:outline-none"
+          className="lg:hidden text-2xl text-gray-800 p-2 rounded-lg hover:bg-gray-100 transition focus:outline-none"
         >
           {menuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
@@ -122,8 +123,8 @@ const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-xl overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-96 py-6 px-6" : "max-h-0 py-0 px-6"
+        className={`lg:hidden bg-white/95 backdrop-blur-lg border-b border-gray-200 shadow-xl overflow-hidden transition-all duration-300 ${
+          menuOpen ? "max-h-[32rem] py-6 px-6" : "max-h-0 py-0 px-6"
         }`}
       >
         <ul className="flex flex-col gap-4">

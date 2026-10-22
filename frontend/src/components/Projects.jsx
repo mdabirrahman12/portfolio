@@ -13,7 +13,7 @@ const Projects = () => {
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-semibold uppercase tracking-wider">
           <HiOutlineSparkles className="text-blue-600 text-sm" />
-          <span>My Portfolio Projects</span>
+          <span>Showcase Portfolio</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
@@ -21,7 +21,7 @@ const Projects = () => {
         </h2>
 
         <p className="text-base sm:text-lg text-gray-600">
-          Explore real-world web applications I built to solve practical problems, demonstrating clean code, modern UI/UX design, and responsive frontend architectures.
+          Hand-crafted web applications demonstrating responsive layouts, modern frontend engineering, component structure, and real-world deployment.
         </p>
       </div>
 
@@ -50,9 +50,16 @@ const Projects = () => {
             {/* Card Body */}
             <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
               <div className="space-y-2.5">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  {project.subtitle && (
+                    <p className="text-xs font-medium text-blue-600 mt-0.5">
+                      {project.subtitle}
+                    </p>
+                  )}
+                </div>
 
                 <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">
                   {project.description}
@@ -78,11 +85,12 @@ const Projects = () => {
 
               {/* Card Footer Actions */}
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                {/* View More / Details Button */}
                 <Link
                   to={`/projects/${project.id}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition"
+                  className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 hover:text-blue-800 transition py-1"
                 >
-                  <span>Details &amp; Tech</span>
+                  <span>View More / Details</span>
                   <HiArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -92,7 +100,8 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="View Source Code on GitHub"
+                      aria-label="View Client Repository on GitHub"
+                      title="GitHub Client Repository"
                       className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition"
                     >
                       <FaGithub className="text-lg" />
@@ -105,9 +114,10 @@ const Projects = () => {
                       target="_blank"
                       rel="noreferrer"
                       aria-label="Open Live Demo"
+                      title="Live Demo"
                       className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
                     >
-                      <span>Demo</span>
+                      <span>Live</span>
                       <HiExternalLink className="text-sm" />
                     </a>
                   )}
@@ -121,14 +131,14 @@ const Projects = () => {
       {/* Bottom Github Note */}
       <div className="mt-12 text-center">
         <p className="text-sm text-gray-500">
-          Want to see more code and experiments? Check out my{" "}
+          Want to explore more repositories and client-side code? Check out my{" "}
           <a
-            href="https://github.com/"
+            href="https://github.com/mdabirrahman12"
             target="_blank"
             rel="noreferrer"
             className="font-semibold text-blue-600 hover:underline inline-flex items-center gap-1"
           >
-            GitHub profile <HiExternalLink />
+            GitHub (@mdabirrahman12) <HiExternalLink />
           </a>
         </p>
       </div>
