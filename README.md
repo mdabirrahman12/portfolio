@@ -1,31 +1,16 @@
-# practice-portfolio-ejp-14
+# React + Vite
 
-A modern, responsive personal developer portfolio web application built with **React 19**, **Vite**, and **Tailwind CSS v4**.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## ✨ Features
-- **Hero Section**: Introduces Abir Rahman, Frontend & Web Developer and SEO Executive, with status badge, stack pills, and interactive developer profile code card.
-- **Interactive Resume (`/resume`)**: Full, ATS-friendly printable resume with Print/Save as PDF functionality.
-- **Featured Projects**: Showcase cards with preview screenshots, tech stack pills, direct details view, and live demo / GitHub links.
-- **Dynamic Project Details (`/projects/:id`)**: Comprehensive deep dive pages for individual projects with challenge breakdowns and future roadmaps.
-- **Skills Matrix**: Categorized technical stack (Frontend, Backend & DB basics, Tools & Deployment) with interactive filter tabs.
-- **Academic & Experience History**: Timeline of formal education, certifications, and hands-on web development experience.
-- **Contact & Direct Messaging**: Contact information cards and interactive messaging form.
-- **Modern Responsive Design**: Smooth scroll spy navigation, mobile drawer menu, and clean footer with back-to-top button.
+Currently, two official plugins are available:
 
-## 🚀 Tech Stack
-- **Frontend**: React 19, JavaScript (ES6+), React Router v7
-- **Styling**: Tailwind CSS v4
-- **Icons**: React Icons
-- **Bundler**: Vite
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠️ Local Development
-```bash
-# Navigate to the frontend directory
-cd frontend
+## React Compiler
 
-# Install dependencies
-npm install
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-# Start local development server
-npm run dev
-```
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
